@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Chinmay Kulkarni | Life from developers glasses</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chinmay Kulkarni">
+<meta property="og:url" content="http://chinmaymk.github.io/page/4/">
+<meta property="og:site_name" content="Chinmay Kulkarni">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chinmay Kulkarni">
+<meta name="twitter:description">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30489435-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class='blog-title' style='float:none !important'>
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<p>Life from developers glasses</p>
+</header>
+    <div id="main">
+      
+  
+    <article id="post-beauty-of-closure-in-javascript" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/09/27/beauty-of-closure-in-javascript/">Beauty of closure in JavaScript</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<div class="post"><br><div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: inherit;">Closure is one of the good parts in JavaScript. Its an amazing way to enable access of local variables from parent function scope, irrespective of the context in which function was invoked. Wait, Instead of getting into jargon about closure, let me just illustrate with a few examples.</span><br><div style="text-align: left;"><span style="font-family: inherit;"><b><br></b></span></div><div style="text-align: left;"><span style="font-family: inherit;"><b> Problem statement:</b></span></div><div style="text-align: left;"><span style="font-family: inherit;">Write a function which will take a digit as input and output verbal representation of the same.</span></div><div style="text-align: left;"><span style="font-family: inherit;"><b><br></b></span></div><div style="text-align: left;"><span style="font-family: inherit;"><b>Solution 1:</b></span></div><span style="color: navy; font-family: Courier New, Courier, monospace;">var numberMapping = [‘zero’,’one’,’two’,’three’,’four’,’five’,’six’,’seven’,’eight’,’nine’];<br>function getNumber(number) {<br>&nbsp;&nbsp;&nbsp; return numberMapping[number] ? numberMapping[number] : ‘Inavlid input’;<br>}<br><br>// getNumber(1)<br>// “one”</span><br><span style="color: navy; font-family: Courier New, Courier, monospace;">// getNumber(12)</span><br><span style="color: navy; font-family: Courier New, Courier, monospace;">// “Invalid input”</span><br><span style="font-family: inherit;"><br style="color: navy;">Lets try to analyze this, we have a global array which holds verbal representation of all digits, and then we’re using this array to return corresponding output of given number. Problem with this approach is, numberMapping array is just dangling in global namespace, means&nbsp;it could be modified&nbsp;anywhere in code. And ofcourse, if modified it will give incorrect result. So this approach is bad. In JavaScript always try to avoid global variables to the extent possible. Also this might create a problem in minification as most of the minifiers tend to change the variable names to shorter versions.</span><br><div style="text-align: left;"><span style="font-family: inherit;"><b><br></b></span></div><div style="text-align: left;"><span style="font-family: inherit;"><b> Solution 2:</b></span></div><span style="color: navy; font-family: Courier New, Courier, monospace;">function getNumber(number) {</span><br><span style="color: navy; font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; var numberMapping = [‘zero’,’one’,’two’,’three’,’four’,’five’,’six’,’seven’,’eight’,’nine’];</span><br><span style="font-family: Courier New, Courier, monospace;"><span style="color: navy;">&nbsp;&nbsp;</span><span style="color: navy;">&nbsp; return numberMapping[number] ? numberMapping[number] : ‘Inavlid input’;</span></span><br><span style="color: navy; font-family: Courier New, Courier, monospace;">}</span><br><span style="font-family: Courier New, Courier, monospace;"><br><span style="color: navy;">// getNumber(1)<br>// “one”</span></span><br><span style="color: navy; font-family: Courier New, Courier, monospace;">// getNumber(12)</span><br><span style="color: navy; font-family: Courier New, Courier, monospace;">// “Invalid input”</span><br><span style="font-family: inherit;"><br>Oh! so we just take the variable inside getNumber function making it local. It works fine and solves the problem we faced in solution 1. But this still isn’t the best approach. Because every time getNumber is called, numberMapping array will be initialized and memory will be allocated to it. So this is nice but not the optimum solution.</span><br><span style="font-family: inherit;"><br></span><br><div style="text-align: left;"><span style="font-family: inherit;"><b> Time to use closure:</b></span></div><span style="font-family: Courier New, Courier, monospace;"><span style="color: navy; font-size: 12px;">var getNumber = (function() {</span><br> <span style="color: navy;">&nbsp; &nbsp; var numberMapping = [‘zero’,’one’,’two’,’three’,’four’,’five’,’six’,’seven’,’eight’,’nine’];</span><br> <span style="color: navy;">&nbsp; &nbsp; return function (number) {</span><br> <span style="color: navy;">&nbsp;&nbsp;</span><span style="color: navy;">&nbsp; &nbsp; &nbsp; return numberMapping[number] ? numberMapping[number] : ‘Inavlid input’;</span><br> &nbsp; &nbsp; }<br> <span style="color: navy;">})();</span></span><br><span style="font-family: Courier New, Courier, monospace;"><span style="color: navy;">// getNumber(1)<br>// “one”</span><br><span style="color: navy;">// getNumber(12)</span><br style="color: navy;"><span style="color: navy;">// “Invalid input”</span></span><br><span style="font-family: inherit;"><br>OK, so this looks a bit complex. What we’re doing here is executing an anonymous function and storing the returned value in a variable named getNumber. In this particular case we’re returning a function. And yes, we can do this in JavaScript! This approach solves the problem we faced in solution 1 by encapsulating numberMapping array. Also as the upper function will only be executed once, hence numberMapping array won’t be initialized every time we call getNumber. And the inner function has access to numberMapping variable because of the beauty of closure!</span><br><div style="text-align: left;"><span style="font-family: inherit;"><b><br></b></span></div><div style="text-align: left;"><span style="font-family: inherit;"><b> To sum it up:</b></span></div><span style="font-family: inherit;">This approach is helpful in many conditions, the most common one is while trying to write object oriented code in JavaScript. using ‘prototype’ or ‘this’ for creating classes does not really fit in overall code ethics of JavaScript. if you use ‘this’ or ‘prototype’ for creating classes, implementing singleton class is not an option. Whereas if you use closure you can use the same style of coding throughout the code base. Using closure in javascript definitely helps in writing beautiful code.</span><br><span style="font-family: inherit;"><br></span><span style="font-family: Courier New, Courier, monospace;"><br></span></div></div></div>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/09/27/beauty-of-closure-in-javascript/" class="article-date">
+  <time datetime="2013-09-27T21:28:00.000Z" itemprop="datePublished">Sep 27 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>»<a class="article-category-link" href="/categories/javascript/closure/">closure</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-companions-for-phonegap" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/09/27/companions-for-phonegap/">Companions for phonegap</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<div class="post"><br><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: inherit;"><a href="http://phonegap.com/" target="_blank">Phonegap&nbsp;</a>has opened up a whole new way of creating mobile applications, in a nutshell it follows “write once, run anywhere” principle. There are some obvious trade-offs of using phonegap. But once you decide upon this framework, there is still some further RnD required on things like which mobile framework should I choose ? How do I build application for various platforms ? and so on. In this article, I’ll try addressing these issues.<br><br>The main problem with JavaScript world is, there are just too many options to choose from. Every other day there comes a new framework claiming it makes development far easier than others. As a result there is nothing like one framework to rule them all. So it ultimately boils down to a soup of frameworks which you have to choose. However just like any other application; JS apps can also broken down to two separate layers of UI and Logic. With this in mind we can now look at various frameworks for mobile development. </span><br><span style="font-family: inherit;"><b><br></b></span><span style="font-family: inherit;"><b>UI frameworks</b></span><br><span style="font-family: inherit;">In case of UI, its mostly CSS magic. There are few points should be considered when looking at CSS framework.</span><br><ol><li>  <span style="font-family: inherit;">Supports CSS3 transitions - CSS3 is the fastest way one can animate in browser</span></li><li>  <span style="font-family: inherit;">Provides wide range of mobile controls</span></li><li>  <span style="font-family: inherit;">Supports vector icons</span></li><li>  <span style="font-family: inherit;">Grid support is a must</span></li><li>  <span style="font-family: inherit;">Has helper classes for creating common elements such has action bar, tab navigation.</span></li><li>  <span style="font-family: inherit;">Should be lightweight (in size and complexity of rules)</span></li></ol><span style="font-family: inherit;">Also make sure you&nbsp;<strong>test on actual device</strong>&nbsp;before zeroing down on a framework. <strong>Device emulator in chrome doesn’t give you the real picture!</strong> In my personal experience I’ve found that many frameworks claim support for all the platforms but do not perform up to the mark when tested on actual devices. If you don’t have a device in mind, then try testing it on as many different devices as possible :)<br><br>There is a really nice website I found for comparing mobile frameworks -&nbsp;<a href="http://frameworkdemos.com/" target="_blank" rel="external">http://frameworkdemos.com/</a></span><br><div><span style="font-family: inherit;">Just open this from any mobile browser and start looking how elements are actually rendered on the device.</span></div><div style="text-align: center;"></div><div style="text-align: left;"><span style="font-family: inherit;"><b><br></b></span></div><div style="text-align: left;"><span style="font-family: inherit;"><b>Backend</b></span></div><div><span style="font-family: inherit;">Now as for the logic part, most of the UI frameworks give you a way of listening to events. But that’s not enough when we are considering a large application. so for deciding back end logic part of your application there is another great project TodoMVC -&nbsp;<a href="http://todomvc.com/" target="_blank" rel="external">http://todomvc.com/</a>.&nbsp;By looking at the code samples, you can get hold of how popular MV* frameworks in JavaScript actually work. Most of the frameworks in this arena are opinionated so in this case there can’t be a thumb-rule for selecting a framework. Just see if it fits your requirements!</span></div><div style="text-align: left;"><span style="font-family: inherit;"><b><br></b></span></div><div style="text-align: left;"><span style="font-family: inherit;"><b>Building your application</b></span></div><div><span style="font-family: inherit;">There is a great tool to build your application for all platforms.&nbsp;<a href="https://build.phonegap.com/" target="_blank" rel="external">https://build.phonegap.com</a>. You can hook up this with a github repository, start the build, download apk and you’re done! Now what if you have to automate this build ? sadly, build phonegap doesn’t support that as of now, at least for the free version. but they have exposed APIs in case you want to fire a build request programmatically. For further reading use&nbsp;<a href="https://build.phonegap.com/api" style="font-size: 12.0px;" target="_blank" rel="external">https://build.phonegap.com/api</a></span><br><span style="font-family: inherit;"><br>Additions are most welcome :)</span></div></div></div>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/09/27/companions-for-phonegap/" class="article-date">
+  <time datetime="2013-09-27T21:19:00.000Z" itemprop="datePublished">Sep 27 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>»<a class="article-category-link" href="/categories/javascript/build-phonegap/">build phonegap</a>»<a class="article-category-link" href="/categories/javascript/build-phonegap/phonegap/">phonegap</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
+  
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:chinmaymk.github.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2015 Chinmay Kulkarni<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'chinmaymk';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="https://cdn.rawgit.com/chinmaymk/jquery-reading-time/master/jquery.readingTime.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.post').readingTime();
+  });
+</script>
+  </div>
+</body>
+</html>

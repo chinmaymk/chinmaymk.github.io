@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: API, REST, MVC | Chinmay Kulkarni | Life from developers glasses</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chinmay Kulkarni">
+<meta property="og:url" content="http://chinmaymk.github.io/categories/API,-REST,-MVC/">
+<meta property="og:site_name" content="Chinmay Kulkarni">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chinmay Kulkarni">
+<meta name="twitter:description">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30489435-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class='blog-title' style='float:none !important'>
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<p>Life from developers glasses</p>
+</header>
+    <div id="main">
+      
+  
+    <article id="post-api-first-development" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/12/25/api-first-development/">API first development</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<blockquote>
+<p>Change is the only constant. </p>
+</blockquote>
+<p>In today’s world, the word “computation” is being used in systems other than computers more frequently. “Internet of things” is coming along nicely. This imposes some changes in traditional concept of software.</p>
+<p>In the evolution of web application, MVC pattern was definitely a milestone. It allowed software engineers to successfully de-couple business logic from UI dependencies and it has been the defacto of writing good, robust web applications. However, with the pace of changes happening today we, as software engineers, need to re-think this model.</p>
+<h3 id="What’s_MVC_anyway_?">What’s MVC anyway ?</h3>
+<p>MVC stands for model-view-controller, as the names suggest, model represents business objects in you application. View is the HTML used to interact with your application and Controller is the glue that holds these two together. If we take a bird’s eye look at this architectural pattern. We can easily think of view-layer as a client interface, which wraps up business logic and computation provided by your application. </p>
+<h3 id="It’s_not_just_one_view_now!">It’s not just one view now!</h3>
+<p>Today, with increasing popularity of smart-phones and BYOD, end users prefer doing their computation from mobile devices - tables, smart-phones etc. Now, to enable users use your application via multiple platforms. It is not sufficient to design application in traditional MVC pattern. Ofcourse you can use responsive web design to share one view between many clients, but it doesn’t have that native look and feel, more importantly speed that native apps bring in picture. </p>
+<blockquote>
+<p>HTML5 is the thing of ‘future’!</p>
+</blockquote>
+<p>HTML5 might seem promising, but it’s just not there yet. Due to poor support for JavaScript heavy applications, using HTML5/client side MVC will make your application insanely slow on some devices. Second option is to make native mobile apps and call APIs from it. So ultimately we’ll end up re-implementing some of the logic.</p>
+<h3 id="Enter_API_first">Enter API first</h3>
+<p>In order to solve this problem, first we need to take the view-layer out from the picture and just focus on the business logic of application. Next think about what operations user can perform with your application, could be data manipulations, or some other form of computation. Wrap this operation in a URL and you have an API! So what changed in this approach ? We focused on the logic first and not the view, doing so we de-coupled our web application one step further. Now any view can be plugged in or out very easily.</p>
+<h3 id="Best_practices_to_follow">Best practices to follow</h3>
+<p>Understanding <a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="external">REST</a> principles is of utmost importance when designing APIs. There are some common considerations while following API first development. Here’s a list of few</p>
+<ol>
+<li>Keep API structure meaningful</li>
+<li>Keep APIs stateless</li>
+<li>Use HTTP verbs to fullest</li>
+<li>Document your APIs - its really important!</li>
+</ol>
+<h3 id="Conclusion">Conclusion</h3>
+<p>API first development allows you to highly reuse the code, helps you implement <a href="http://chinmaymk.com/blog/2013/10/30/soa-and-life/" target="_blank" rel="external">SOA</a>, and boost overall time required for development.</p>
+<p>Further reading </p>
+<ul>
+<li><a href="http://www.api-first.com/" target="_blank" rel="external">http://www.api-first.com/</a></li>
+<li><a href="http://blog.pop.co/post/67465239611/why-we-chose-api-first-development" target="_blank" rel="external">http://blog.pop.co/post/67465239611/why-we-chose-api-first-development</a></li>
+<li><a href="http://blog.dossot.net/2011/11/api-first-development.html" target="_blank" rel="external">http://blog.dossot.net/2011/11/api-first-development.html</a></li>
+<li><a href="http://www.leaseweblabs.com/2013/10/api-first-architecture-fat-vs-thin-server-debate/" target="_blank" rel="external">http://www.leaseweblabs.com/2013/10/api-first-architecture-fat-vs-thin-server-debate/</a></li>
+</ul>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/12/25/api-first-development/" class="article-date">
+  <time datetime="2013-12-26T04:33:55.000Z" itemprop="datePublished">Dec 25 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2013/12/25/api-first-development/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/API,-REST,-MVC/">API, REST, MVC</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+  
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:chinmaymk.github.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2015 Chinmay Kulkarni<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'chinmaymk';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="https://cdn.rawgit.com/chinmaymk/jquery-reading-time/master/jquery.readingTime.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.post').readingTime();
+  });
+</script>
+  </div>
+</body>
+</html>

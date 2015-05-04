@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Web App Concepts | Chinmay Kulkarni | Life from developers glasses</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Web application frameworks are awesome. They take care of repeatitive tasks so developers don’t have to. I have worked and played with many web frameworks including ASP.Net mvc, play, express, sails,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web App Concepts">
+<meta property="og:url" content="http://chinmaymk.github.io/2015/04/09/Web-app-concepts/">
+<meta property="og:site_name" content="Chinmay Kulkarni">
+<meta property="og:description" content="Web application frameworks are awesome. They take care of repeatitive tasks so developers don’t have to. I have worked and played with many web frameworks including ASP.Net mvc, play, express, sails,">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web App Concepts">
+<meta name="twitter:description" content="Web application frameworks are awesome. They take care of repeatitive tasks so developers don’t have to. I have worked and played with many web frameworks including ASP.Net mvc, play, express, sails,">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30489435-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class='blog-title' style='float:none !important'>
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<p>Life from developers glasses</p>
+</header>
+    <div id="main">
+      <article id="post-Web-app-concepts" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Web App Concepts
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Web application frameworks are awesome. They take care of repeatitive tasks so developers don’t have to. I have worked and played with many web frameworks including <a href="http://www.asp.net/mvc" target="_blank" rel="external">ASP.Net mvc</a>, <a href="https://www.playframework.com/" target="_blank" rel="external">play</a>, <a href="expressjs.com">express</a>, <a href="sailsjs.org">sails</a>, <a href="http://projects.spring.io/spring-framework/#quick-start" target="_blank" rel="external">spring</a>, <a href="https://www.djangoproject.com/" target="_blank" rel="external">django</a>, <a href="http://martini.codegangsta.io/" target="_blank" rel="external">martini</a> and so on. Even though these frameworks vary in API offerings and environments, they are built on same fundamentals. </p>
+<p>I think it is easy to pick up any web framework once underlying concepts are understood. From bird’s eye view, framework is just a bunch of code that developers could reuse. Consequently, it becomes easy to identify and learn structure of this code. In this post, I will try to sum up a mindset for learning any framework. Before jumping into details, let me establish ground zero.</p>
+<p><strong>No magic</strong><br>There is absolutely no magic in frameworks. Someone somewhere has written that code so you don’t have to. If anything in the framework seems magical, one can simply open the source code and check the implementation (well, as most of the frameworks are open source anyway).</p>
+<p><strong>HTTP HTTP HTTP</strong><br>For web application frameworks, everything starts and ends with HTTP. It is crucial to understand request-response cycle. All the communication with browser is done by passing packets of HTTP.</p>
+<h2 id="Good_old_request-response_cycle">Good old request-response cycle</h2>
+<p>Now let’s try to disect an entire request-response cycle and understand it conceptually. </p>
+<p><strong>Where’s the entry point?</strong><br>As everything is communicated HTTP, there must be a point point where HTTP packet is read and sent to appropriate function to process. Most of the frameworks have routes definition as entry point where developers can interact with request. But even before that, the framework needs to parse and construct a request object from HTTP packet. Frameworks usually have a route file or annotations to specify handlers.</p>
+<p><strong>But how do I know this request is valid?</strong><br>Next, the request is usually authenticated. That means somewhere in the codebase there should be a mapping of session IDs and session data. It could be in memeory or in external data store such as mongo or redis. This layer is nothing but middleware (anything that runs between route and controller).</p>
+<p><strong>Okay… what next?</strong><br>This is where primary logic of app starts executing. This layer is controllers. Controllers usually talk with some data interface to combine and manipulate data from different sources.</p>
+<p><strong>Where’s my data coming from?</strong><br>Most of the frameworks provide a way to interact with databases. Models are representative of data tables or collections. Some frameworks also provide associations while some emphasize on BYORM (bring your own ORM). Another way of populating data is from cache. Since database calls are expensive, web developers try to minimize cost by storing as much data as possible in caches.</p>
+<p><strong>We need to respond something, right?</strong><br>After the data has been gathered, we need to send something to client. This could be a browser or a third party application. This is usually done in last couple of lines of code in controller logic. The data is transformed to JSON or HTML based on the requirement. Most of the frameworks provide one or more ways of creating HTML and encoding data in JSON. After encoding, frameworks take care of putting the data in proper HTTP packets and sending it back to clients.</p>
+<p>And that’s it! In retrospect, these points have helped me pick up many frameworks quite quickly. I hope they work for you as well!</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2015/04/09/Web-app-concepts/" class="article-date">
+  <time datetime="2015-04-10T03:51:56.000Z" itemprop="datePublished">Apr 9 2015</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2015/04/09/Web-app-concepts/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SoftwareEngineering/">SoftwareEngineering</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebApplicationDevelopment/">WebApplicationDevelopment</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/03/26/Its-the-valley/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          It&#39;s the Valley
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:chinmaymk.github.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2015 Chinmay Kulkarni<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'chinmaymk';
+  
+  var disqus_url = 'http://chinmaymk.github.io/2015/04/09/Web-app-concepts/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="https://cdn.rawgit.com/chinmaymk/jquery-reading-time/master/jquery.readingTime.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.post').readingTime();
+  });
+</script>
+  </div>
+</body>
+</html>

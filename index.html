@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Chinmay Kulkarni | Life from developers glasses</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chinmay Kulkarni">
+<meta property="og:url" content="http://chinmaymk.github.io/">
+<meta property="og:site_name" content="Chinmay Kulkarni">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chinmay Kulkarni">
+<meta name="twitter:description">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30489435-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class='blog-title' style='float:none !important'>
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<p>Life from developers glasses</p>
+</header>
+    <div id="main">
+      
+  
+    <article id="post-Web-app-concepts" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2015/04/09/Web-app-concepts/">Web App Concepts</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Web application frameworks are awesome. They take care of repeatitive tasks so developers don’t have to. I have worked and played with many web frameworks including <a href="http://www.asp.net/mvc" target="_blank" rel="external">ASP.Net mvc</a>, <a href="https://www.playframework.com/" target="_blank" rel="external">play</a>, <a href="expressjs.com">express</a>, <a href="sailsjs.org">sails</a>, <a href="http://projects.spring.io/spring-framework/#quick-start" target="_blank" rel="external">spring</a>, <a href="https://www.djangoproject.com/" target="_blank" rel="external">django</a>, <a href="http://martini.codegangsta.io/" target="_blank" rel="external">martini</a> and so on. Even though these frameworks vary in API offerings and environments, they are built on same fundamentals. </p>
+<p>I think it is easy to pick up any web framework once underlying concepts are understood. From bird’s eye view, framework is just a bunch of code that developers could reuse. Consequently, it becomes easy to identify and learn structure of this code. In this post, I will try to sum up a mindset for learning any framework. Before jumping into details, let me establish ground zero.</p>
+<p><strong>No magic</strong><br>There is absolutely no magic in frameworks. Someone somewhere has written that code so you don’t have to. If anything in the framework seems magical, one can simply open the source code and check the implementation (well, as most of the frameworks are open source anyway).</p>
+<p><strong>HTTP HTTP HTTP</strong><br>For web application frameworks, everything starts and ends with HTTP. It is crucial to understand request-response cycle. All the communication with browser is done by passing packets of HTTP.</p>
+<h2 id="Good_old_request-response_cycle">Good old request-response cycle</h2>
+<p>Now let’s try to disect an entire request-response cycle and understand it conceptually. </p>
+<p><strong>Where’s the entry point?</strong><br>As everything is communicated HTTP, there must be a point point where HTTP packet is read and sent to appropriate function to process. Most of the frameworks have routes definition as entry point where developers can interact with request. But even before that, the framework needs to parse and construct a request object from HTTP packet. Frameworks usually have a route file or annotations to specify handlers.</p>
+<p><strong>But how do I know this request is valid?</strong><br>Next, the request is usually authenticated. That means somewhere in the codebase there should be a mapping of session IDs and session data. It could be in memeory or in external data store such as mongo or redis. This layer is nothing but middleware (anything that runs between route and controller).</p>
+<p><strong>Okay… what next?</strong><br>This is where primary logic of app starts executing. This layer is controllers. Controllers usually talk with some data interface to combine and manipulate data from different sources.</p>
+<p><strong>Where’s my data coming from?</strong><br>Most of the frameworks provide a way to interact with databases. Models are representative of data tables or collections. Some frameworks also provide associations while some emphasize on BYORM (bring your own ORM). Another way of populating data is from cache. Since database calls are expensive, web developers try to minimize cost by storing as much data as possible in caches.</p>
+<p><strong>We need to respond something, right?</strong><br>After the data has been gathered, we need to send something to client. This could be a browser or a third party application. This is usually done in last couple of lines of code in controller logic. The data is transformed to JSON or HTML based on the requirement. Most of the frameworks provide one or more ways of creating HTML and encoding data in JSON. After encoding, frameworks take care of putting the data in proper HTTP packets and sending it back to clients.</p>
+<p>And that’s it! In retrospect, these points have helped me pick up many frameworks quite quickly. I hope they work for you as well!</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2015/04/09/Web-app-concepts/" class="article-date">
+  <time datetime="2015-04-10T03:51:56.000Z" itemprop="datePublished">Apr 9 2015</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2015/04/09/Web-app-concepts/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SoftwareEngineering/">SoftwareEngineering</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebApplicationDevelopment/">WebApplicationDevelopment</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-Its-the-valley" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2015/03/26/Its-the-valley/">It&#39;s the Valley</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Six months have passed since I first stepped foot in valley. Yes, its called the valley not Silicon Valley and San Fransisco is called the city. Last six months have been absolutely wonderful. I got the opportunity to learn about startup culture in the valley and be a part of this dynamic ecosystem. Along the way, I noticed some unique things. In this post, I will try and provide a gist of it.</p>
+<p><strong>Weather is awesome</strong><br>No post about valley is complete without mentioning how beautiful the weather is. There is ample sunlight, enough cold, and soothing breezes all around year. All types of different destinations are in driving distance from here; from snowy mountains to sea to desert.</p>
+<p><strong>Failure is a credential</strong><br>Failures are seen differently here. It is quite normal to have three or four failed attempts before building a product that succeeds. In fact, it is almost a ritual to write a detailed blog post about failed products.</p>
+<p><strong>Everybody writes code</strong><br>Basic programming skills are in abudance. Even marketing people know programming 101. I remember my Uber driver asking me questions about interfaces in Java, that just blew me away.</p>
+<p><strong>Everybody is killing it, all the time</strong><br>In every coffee shop, there are always intense discussions going on about how a certain industry is gonna be disrupted. Its not unusual to see few geeks trying to pitch their idea to investors or to see android study groups gathered around dinner table.</p>
+<p><strong>Meeting legends is normal</strong><br>Silicon Valley isn’t short of talent. It is likely to meet to great minds in computer industry. Over the last six months, I met Don Knuth, Peter Norvig, Vint Cerf, Andrew Ng. It definitely is an awesome experience interacting with legends.</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2015/03/26/Its-the-valley/" class="article-date">
+  <time datetime="2015-03-27T03:27:03.000Z" itemprop="datePublished">Mar 26 2015</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2015/03/26/Its-the-valley/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SiliconValley/">SiliconValley</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-Things-I-wish-I-knew-when-I-started-with-machine-learning" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2015/02/10/Things-I-wish-I-knew-when-I-started-with-machine-learning/">Things I Wish I Knew Before I Started With Machine Learning</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Looking back at my journey so far, here are few things that would have made my life easier. </p>
+<p><strong>It is not easy</strong><br>You’re gonna spend a lot of time searching through resources. Just running an algorithm from caret library isn’t enough. You have to understand the maths behind it and it takes a lot of careful reading and mental efforts. Any resource that tells you “you don’t need to learn maths” is probably not worth the efforts.</p>
+<p><strong>Machine learning is just one part of data science</strong><br>Data science as a whole is much bigger game. Machine learning is just one bit of it. Even though not officially defined, it involves data pre-processing/cleansing, feature engineering, modeling, model training, model validation, presentation of results as building blocks. It is critical to move beyond pre defined techniques and develope an intuition for all factos in data science.</p>
+<p><strong>Mostly, you will be occupied with preparing data sets</strong><br>When you’re doing machine learning, majority of time will be spend in preparing data: extracting data from multiple sources, cleaning datasets, aligning different datasets, mapping attributes to different dimensions etc.</p>
+<p><strong>Visualizations are important</strong><br>Running all the algorithms is cool. But it is not of much use if it cannot be presented effectively to people who are not from machine learning background, executives and product managers are probably not gonna spend time looking how your R console looks. Creating visualizations considering both technical and non technical audience is crucial in machine learning.</p>
+<p><strong>There are libraries for EVERYTHING, you just need to find them</strong><br>Most of the popular algorithms are already implemented in R and python. This serves great as a point of reference for performance. Also, it helps a lot understanding configuration options of each algorithm and see how it affects your model. Sure, you can code up an algorithm. But do it from learning’s perspective or only if required.</p>
+<p><strong>Most of the valuable material is in books and papers</strong><br>Most of the online resources (including this post) will never give you the “whole deal”. They usually work only if you follow exactly what they say. But they don’t give much intuition on how to extend it beyond the example presented in the article. Eventually you will start reading books to get a better understanding.</p>
+<p>Following the path of machine learning is a big commitment in terms of time and efforts. Be prepared for it.</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2015/02/10/Things-I-wish-I-knew-when-I-started-with-machine-learning/" class="article-date">
+  <time datetime="2015-02-10T21:33:47.000Z" itemprop="datePublished">Feb 10 2015</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2015/02/10/Things-I-wish-I-knew-when-I-started-with-machine-learning/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DataScience/">DataScience</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-Moving-from-python-to-R" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/11/13/Moving-from-python-to-R/">Moving From Python to R</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Its been 3 months since I started with machine learning. Coming from a web development background, my first choice of tool for performing data analysis was python. Primary reason why I chose python was the familiarity with language. But soon enough I started to realize its not an optimal environment for data analytics. Because my programming background heavily influenced my workflow, I kept shuffling across multiple tools; terminal for running the script, sublime for writing python code and matplotlib chart viewers for visualizing the data. I wanted a better workflow to work with data. A workflow that will allow me to easily try out different visualizations, navigate through data without writing much code and keep a history of operations I performed.</p>
+<p>Since I knew R is the most used programming language for data science, I decided to give it a try. I downloaded R distribution from the <a href="http://www.r-project.org/" target="_blank" rel="external">website</a>. I started by executing some commands on the terminal, initial impressions were good. However, I could not find more efficient way to explore the data than earlier. Then I came across <a href="http://www.rstudio.com/" target="_blank" rel="external">RStudio</a>. RStudio is awesome. It allowed me pin down all points of interest within a single window. It shows me plots, help for R functions, data explorer and simplitstic editor for writing code. I loved the way I could execute commands on RConsole and see the output immediately on the plots tab. This allowed me to keep iterating quickly. Later, I started learning more about the language. RStudio also shows the help for functions in R, it has been the most useful feature for me. I’m discovering more and more as I learn about the language and ecosystem of packages. But as of now, R is definitely a way to go for my machine learning explorations.</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2014/11/13/Moving-from-python-to-R/" class="article-date">
+  <time datetime="2014-11-13T17:50:05.000Z" itemprop="datePublished">Nov 13 2014</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2014/11/13/Moving-from-python-to-R/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DataScience/">DataScience</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-Getting-started-with-machine-learning" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/10/19/Getting-started-with-machine-learning/">Getting Started With Machine Learning</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Machine learning is without a doubt the most interesting field I have come across so far. However, I found it extremely difficult to get started with the basic concepts of machine learning without spending hours and hours scrolling through world wide web. Coming from a web development background, I found it hard to get started with statistics, probability and other concepts related with machine learning. In this post, I will try and list resources that helped me and might help someone else in similar situation. </p>
+<h1 id="Courses">Courses</h1>
+<ul>
+<li><p><strong>Andrew Ng’s coursera course</strong> - <a href="https://www.coursera.org/course/ml" target="_blank" rel="external">coursera</a><br>If you haven’t heard of this course yet, just go ahead and take it.<br>This course provides a broad introduction to machine learning, datamining, and statistical pattern recognition.</p>
+</li>
+<li><p><strong>Andrew Ng’s stanford course CS 229</strong> - <a href="https://www.youtube.com/watch?v=UzxYlbK2c7E&amp;list=PLA89DCFA6ADACE599" target="_blank" rel="external">youtube</a><br>This is a much detailed version than the coursera course.<br>This course provides a broad introduction to machine learning and statistical pattern recognition. Topics include supervised learning, unsupervised learning, learning theory, reinforcement learning and adaptive control. Recent applications of machine learning, such as to robotic control, data mining, autonomous navigation, bioinformatics, speech recognition, and text and web data processing are also discussed.</p>
+</li>
+<li><p><strong>Machine learning course CS 156 by Yaser Abu-Mostafa</strong> - <a href="https://www.youtube.com/watch?v=mbyG85GZ0PI&amp;list=PLD63A284B7615313A" target="_blank" rel="external">youtube</a><br>This course helps clear many basic concepts. Also, I liked the presentation by Yaser Abu-Mostafa!<br>This is an introductory course by Caltech Professor Yaser Abu-Mostafa on machine learning that covers the basic theory, algorithms, and applications. </p>
+</li>
+<li><p><strong>Probabilistic graphical models</strong> - <a href="https://www.coursera.org/course/pgm" target="_blank" rel="external">coursera</a><br>A bit advanced course, but worth taking.<br>In this class, you will learn the basics of the PGM representation and how to construct them, using both human knowledge and machine learning techniques.</p>
+</li>
+<li><p><strong>In-depth introduction to machine learning</strong> - <a href="http://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/" target="_blank" rel="external">r-bloggers</a><br>Awesome introduction, This lecture series is provided stanford professors Dr. Hastie and Dr. Tibshirani.</p>
+</li>
+<li><p><strong>Mathematical Biostatistics Boot Camp 1</strong> - <a href="https://www.coursera.org/course/biostats" target="_blank" rel="external">coursera</a><br>This class helps refresh basics of mathematics.<br>Topics include probability, random variables, distributions, expectations, variances, independence, conditional probabilities, likelihood and some basic inferences based on confidence intervals.</p>
+</li>
+</ul>
+<h1 id="Web_resources">Web resources</h1>
+<ul>
+<li><p><a href="http://machinelearningmastery.com/start-here/" target="_blank" rel="external">Machine learning mastery</a><br>A compilation of steps to get started, extremely helpful for beginners</p>
+</li>
+<li><p><a href="https://www.kaggle.com/" target="_blank" rel="external">kaggle</a>, The Home of Data Science<br>Only name is sufficient - The Home of Data Science</p>
+</li>
+<li><p><a href="http://www.datatau.com/" target="_blank" rel="external">DataTau</a><br>Hackernews for data scientists</p>
+</li>
+<li><p><a href="http://archive.ics.uci.edu/ml/datasets.html" target="_blank" rel="external">UCI machine learning repository</a><br>Machine learning needs data, UCI give you data.</p>
+</li>
+</ul>
+<h1 id="Language">Language</h1>
+<p>Even though language is more of a personal choice, machine learning algorithms are hard to implement in every language out there. Thus, some languages are favoured by ML community. Primary languages used as per <a href="http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/" target="_blank" rel="external">kaggle</a>, and <a href="http://machinelearningmastery.com/best-programming-language-for-machine-learning/" target="_blank" rel="external">ML mastery</a> are R, matlab and python. I personally prefer python, because it nicely fits in web stack. But R and matlab are surely great tools as well.</p>
+<p>For python lovers, <a href="http://www.scipy.org/" target="_blank" rel="external">SciPy</a> is a place to go. In case you’re new to python, I recommend learning the language first. </p>
+<p>For learning R, there are loads of videos on YouTube. As a beginner in R, it is hard to find one that works for you. I found <a href="https://www.youtube.com/playlist?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU" target="_blank" rel="external">R Programming Tutorials</a> by MarinStatsLectures quite helpful.</p>
+<p>Thank you for reading and I hope this has been an informative post.</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2014/10/19/Getting-started-with-machine-learning/" class="article-date">
+  <time datetime="2014-10-20T00:44:03.000Z" itemprop="datePublished">Oct 19 2014</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2014/10/19/Getting-started-with-machine-learning/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Statistics/">Statistics</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:chinmaymk.github.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2015 Chinmay Kulkarni<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'chinmaymk';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="https://cdn.rawgit.com/chinmaymk/jquery-reading-time/master/jquery.readingTime.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.post').readingTime();
+  });
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2013 | Chinmay Kulkarni | Life from developers glasses</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chinmay Kulkarni">
+<meta property="og:url" content="http://chinmaymk.github.io/archives/2013/">
+<meta property="og:site_name" content="Chinmay Kulkarni">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chinmay Kulkarni">
+<meta name="twitter:description">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30489435-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class='blog-title' style='float:none !important'>
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<p>Life from developers glasses</p>
+</header>
+    <div id="main">
+      
+  
+    <article id="post-api-first-development" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/12/25/api-first-development/">API first development</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<blockquote>
+<p>Change is the only constant. </p>
+</blockquote>
+<p>In today’s world, the word “computation” is being used in systems other than computers more frequently. “Internet of things” is coming along nicely. This imposes some changes in traditional concept of software.</p>
+<p>In the evolution of web application, MVC pattern was definitely a milestone. It allowed software engineers to successfully de-couple business logic from UI dependencies and it has been the defacto of writing good, robust web applications. However, with the pace of changes happening today we, as software engineers, need to re-think this model.</p>
+<h3 id="What’s_MVC_anyway_?">What’s MVC anyway ?</h3>
+<p>MVC stands for model-view-controller, as the names suggest, model represents business objects in you application. View is the HTML used to interact with your application and Controller is the glue that holds these two together. If we take a bird’s eye look at this architectural pattern. We can easily think of view-layer as a client interface, which wraps up business logic and computation provided by your application. </p>
+<h3 id="It’s_not_just_one_view_now!">It’s not just one view now!</h3>
+<p>Today, with increasing popularity of smart-phones and BYOD, end users prefer doing their computation from mobile devices - tables, smart-phones etc. Now, to enable users use your application via multiple platforms. It is not sufficient to design application in traditional MVC pattern. Ofcourse you can use responsive web design to share one view between many clients, but it doesn’t have that native look and feel, more importantly speed that native apps bring in picture. </p>
+<blockquote>
+<p>HTML5 is the thing of ‘future’!</p>
+</blockquote>
+<p>HTML5 might seem promising, but it’s just not there yet. Due to poor support for JavaScript heavy applications, using HTML5/client side MVC will make your application insanely slow on some devices. Second option is to make native mobile apps and call APIs from it. So ultimately we’ll end up re-implementing some of the logic.</p>
+<h3 id="Enter_API_first">Enter API first</h3>
+<p>In order to solve this problem, first we need to take the view-layer out from the picture and just focus on the business logic of application. Next think about what operations user can perform with your application, could be data manipulations, or some other form of computation. Wrap this operation in a URL and you have an API! So what changed in this approach ? We focused on the logic first and not the view, doing so we de-coupled our web application one step further. Now any view can be plugged in or out very easily.</p>
+<h3 id="Best_practices_to_follow">Best practices to follow</h3>
+<p>Understanding <a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="external">REST</a> principles is of utmost importance when designing APIs. There are some common considerations while following API first development. Here’s a list of few</p>
+<ol>
+<li>Keep API structure meaningful</li>
+<li>Keep APIs stateless</li>
+<li>Use HTTP verbs to fullest</li>
+<li>Document your APIs - its really important!</li>
+</ol>
+<h3 id="Conclusion">Conclusion</h3>
+<p>API first development allows you to highly reuse the code, helps you implement <a href="http://chinmaymk.com/blog/2013/10/30/soa-and-life/" target="_blank" rel="external">SOA</a>, and boost overall time required for development.</p>
+<p>Further reading </p>
+<ul>
+<li><a href="http://www.api-first.com/" target="_blank" rel="external">http://www.api-first.com/</a></li>
+<li><a href="http://blog.pop.co/post/67465239611/why-we-chose-api-first-development" target="_blank" rel="external">http://blog.pop.co/post/67465239611/why-we-chose-api-first-development</a></li>
+<li><a href="http://blog.dossot.net/2011/11/api-first-development.html" target="_blank" rel="external">http://blog.dossot.net/2011/11/api-first-development.html</a></li>
+<li><a href="http://www.leaseweblabs.com/2013/10/api-first-architecture-fat-vs-thin-server-debate/" target="_blank" rel="external">http://www.leaseweblabs.com/2013/10/api-first-architecture-fat-vs-thin-server-debate/</a></li>
+</ul>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/12/25/api-first-development/" class="article-date">
+  <time datetime="2013-12-26T04:33:55.000Z" itemprop="datePublished">Dec 25 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2013/12/25/api-first-development/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/API,-REST,-MVC/">API, REST, MVC</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-a-thousand-thoughts" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/11/19/a-thousand-thoughts/">A thousand thoughts</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<div class="post"><br><div dir="ltr" style="text-align: left;" trbidi="on">The expression “a thousand thoughts running in my head” is very common to hear. We even experience it often when under extreme stress, may it be exams, an important meeting or any other crucial event in life. Eyes start jumbling, vision sometimes becomes blur, and typically before finishing the first thought, the next one pops up!<br><div><br></div><div>Now comes the interesting question, can we make sense out of it ? I believe we can. We can relate this situation to the concept of <a href="http://en.wikipedia.org/wiki/Multithreading_(computer_architecture)" target="_blank">multi threading</a>. Brain is a phenomenal organ, the processing capacity of brain is just unmatched. But considering pattern of thoughts that emerge, one can think of this situation as in when processor is computing multiple threads simultaneously. So how does the processor make sense out of all these threads ? answer would be “by maintaining states!”</div><div><br></div><div>So how&nbsp;one&nbsp;can maintain states of his thoughts ? Personally, I prefer following these steps:</div><div><br></div><div><b>1. Get a writing tool</b></div><div>Let it be rough pen and paper, notes application in smart phone or a whiteboard with markers! Its very important to achieve this first step as soon as possible. Cause brain is not going to stop! So get yourself something to write to on.</div><div><br></div><div><b>2. Starting jotting down high level ideas</b></div><div>The best way to identify high level ideas is by trying to remember everything flashed in your mind in last 5-10 minutes. Anything that pops up within first 40-50 seconds are the ones you’re looking for! Remember: every minute is crucial. These high level thoughts will be headlines. Leave nice and large blank space below each of these.</div><div><br></div><div><b>3. Take a look at each one of them individually and try to figure out details!</b></div><div>Once high level thoughts are sorted out, it’s time to think about details, think about examples, possible implications, and any other detail you might feel important. Remember: don’t forget to note down these! You can abbreviate heavily if you want. Just make sure you would understand it later.</div><div><br></div><div><b>4. Try to link the them</b></div><div>There’s a high probability that the thoughts will be interrelated, by one or the other way. Once all the details are in front of you, they will help take better decisions.&nbsp;</div><div><br></div><div><b>5. Identify action items</b></div><div>Once you have performed all the steps above, think in terms of identifying short term action items for you. By identifying action items, you can plan better!</div><blockquote class="tr_bq">Thinking is not enough, one must act</blockquote>In my experience, some of the coolest ideas have come up while I was under stress, and the question how do I make sense out of it was pending since many days. Finally, I’ve come up with a solution that works in my case, and not only following this process gives me pleasure of being productive it also helps reduce the stress! See if helps you too!</div></div>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/11/19/a-thousand-thoughts/" class="article-date">
+  <time datetime="2013-11-19T14:34:00.000Z" itemprop="datePublished">Nov 19 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2013/11/19/a-thousand-thoughts/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/thoughts/">thoughts</a>»<a class="article-category-link" href="/categories/thoughts/thougthprocess/">thougthprocess</a>»<a class="article-category-link" href="/categories/thoughts/thougthprocess/multithreading/">multithreading</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-where-puck-is-going-to-be" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/11/11/where-puck-is-going-to-be/">Where the puck is going to be ?</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<div class="post"><br><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: inherit;">Since the dawn of mankind,&nbsp;the question:&nbsp;now what ?, &nbsp;has been troubling us a lot. So you have finished a task, achieved a milestone, accomplished a goal, now what ? Do you stop there or thrive for more ?</span><br><span style="font-family: inherit;"><br>This question&nbsp;relates to progress of software projects in a much more philosophical way. If we consider the typical software development life cycle, it always starts with a finite set of problems. Starting from todo list applications to complex solutions, the beginning is always from a finite set of problems which goes on evolving as you develop. And at each step, creator of software has to take a moment and think where all of this is going ? It is safe to assume that processes like <a href="http://en.wikipedia.org/wiki/Agile_software_development" target="_blank">agile</a>, <a href="http://en.wikipedia.org/wiki/Iterative_and_incremental_development" target="_blank">iterative and incremental</a> software development have emerged from the same phenomena. To give software creators more room in order to analyse how software is taking shape.</span><br><span style="font-family: inherit;"><br>An awesome quote by&nbsp;<a href="http://en.wikipedia.org/wiki/Wayne_Gretzky" target="_blank">Wayne Gretzky</a>: <b>I skate to where the puck is going to be, not where it has been</b>. In software world, this quote tells us how to comprehend the question of&nbsp;now what.<i>&nbsp;</i>For example, you just came up with a great idea, but someone else has already implemented it! what do you do ? do you stop there ? or try to figure out how to make it better ? If you’re thinking in this direction, you’re already on right track! Figuring out how to make the world a better place to live in, always leads to something interesting.</span><br><span style="font-family: inherit;"><br>Its insanely important to&nbsp;keep asking for the next big thing, the next mind blowing feature you’re going to deliver, in this exact process lies the root of innovation. Lot of folks talk about innovation, but none of them tell you the crux of it! Innovation isn’t necessarily something out of the box or something you’ve never seen before, but a simple twist in our mundane life. <b>Innovation is a lifestyle, not a goal</b>, it’s a mindset one has to live in.</span><br><span style="font-family: inherit;"><br>Software and innovation have to be intertwined together. While writing software, developer always has to keep thinking about how to make his solution more appealing, more enchanted. The magic touch his solution is going provide to this world. And all of this comes from the question we started with, now what ?</span></div></div>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/11/11/where-puck-is-going-to-be/" class="article-date">
+  <time datetime="2013-11-11T23:33:00.000Z" itemprop="datePublished">Nov 11 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software/">software</a>»<a class="article-category-link" href="/categories/software/innovation/">innovation</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-soa-and-life" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/10/30/soa-and-life/">SOA and life</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<div class="post"><br><div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: left;"><span style="font-family: inherit;">It’s amazing how principles and styles from software world map directly to day-to-day events. Let it be core OOP concepts such as abstraction, inheritance, polymorphism or design patterns such as singleton, MVC, MVVM, Observer and so on, one can always track the origin of these entities back to different aspects of human society.</span></div><div><span style="font-family: inherit;"><br></span></div><div><span style="font-family: inherit;">For those who don’t know <a href="http://en.wikipedia.org/wiki/Service-oriented_architecture" target="_blank">SOA</a>&nbsp;- service oriented architecture. It basically means derivation and integration :). &nbsp;In this post, instead of getting into the details of SOA I would like to highlight how SOA relates to real life. so let’s get to it!</span><br><span style="font-family: inherit;"><br>In SOA, typically the&nbsp;solution&nbsp;is divided into different services which are exposed as HTTP endpoints to other services. They can interact with each other as well as with outside world in some cases. Now in real life, consider your&nbsp;solution to be an organization-<span style="color: #444444;">MyCompany&nbsp;</span><span style="color: #444444;">Inc</span><i>. </i>Like any organization,&nbsp;<span style="color: #666666;">MyCompany Inc</span> will divide&nbsp;responsibilities among various groups: there will be a sales team, a marketing team, a production team, a finance and a legal team. Pretty standard, eh? - correct.&nbsp;</span><br><span style="font-family: inherit;"><br>Now comes the interesting part, even though all these teams are headed by the same management folks or C-class executives so to speak, they often interact with each other and with higher management, so what makes this interaction possible ? emails ? - you can’t possibly go wrong with this answer! but if you consider these transactions from a software point of view, the term would be “A Data Contract”! Two teams can understand each other only if both of them are agreed upon the same data contract! just like SOA!</span><br><span style="font-family: inherit;"><br>Next, by splitting the entire organization into small focused teams&nbsp;<span style="color: #444444;">MyCompany&nbsp;</span><span style="color: #444444;">Inc</span>&nbsp;can achieve separation of concerns,&nbsp;each team is focused on doing ONE thing, and ONE thing only. This helps people working on the team to align themselves with the goal of team as a whole, and we do exactly the same for SOA! Each service stands for a purpose, to achieve one small thing the right way.</span><br><span style="font-family: inherit;"><br>Now the diversity, it very unlikely that&nbsp;<span style="color: #444444;">MyCompany&nbsp;</span><span style="color: #444444;">Inc</span><i>&nbsp;</i>will have&nbsp;each team with same background, ethnicity, culture, language or even continent for that matter! Also for functioning of the team, each of them requires a specialized setup. Sales guys can probably live with a slow PC, but production guys can’t. Yet despite all the differences,&nbsp;<span style="color: #444444;">MyCompany&nbsp;</span><span style="color: #444444;">Inc</span><i>&nbsp;</i>has to function somehow, right ? so how SOA is similar here ?, As each service is an individual component, each service can have its own environment, from underlying language to production server, every piece can be customized.</span><br><span style="font-family: inherit;"><br>Just to sum it up, understanding the way SOA relates to life gives you a much more comprehensive approach for analyzing pros and cons of this architectural style.</span></div></div></div>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/10/30/soa-and-life/" class="article-date">
+  <time datetime="2013-10-30T17:27:00.000Z" itemprop="datePublished">Oct 30 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Service-oriented-architecture/">Service oriented architecture</a>»<a class="article-category-link" href="/categories/Service-oriented-architecture/SOA/">SOA</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-life-cycle-of-javascript-adaption" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/10/01/life-cycle-of-javascript-adaption/">Adaption of JavaScript</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<div class="post"><br><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: inherit;">It’s funny how people react to JavaScript, some get excited, some get terrified, while some start crying. In recent past, I’ve seen many folks arguing that JavaScript isn’t really a language. They often say its just something kids like to play with. And some talk about JavaScript with so much passion that I feel they love JS more than their wives. Interestingly, I could see a pattern emerging out of all these discussions.&nbsp;</span><br><span style="font-family: inherit;"><br>  </span><br><div class="separator" style="clear: both; text-align: center;"><a href="http://www.animationinsider.com/wp-content/uploads/2012/08/yoda.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" target="_blank" rel="external"><span style="font-family: inherit;"><img border="0" height="180" src="http://www.animationinsider.com/wp-content/uploads/2012/08/yoda.jpg" width="320"></span></a></div><span style="font-family: inherit;"><br><br>A JavaScript conqueror has to go through 4 phases to accept the language.</span><br><span style="font-family: inherit;"><br><br><br><br></span><br><span style="font-family: inherit;"><b><br></b><b><br></b><b>1. Ignorance:&nbsp;</b></span><br><a href="http://rlv.zcache.co.uk/whatever_guy_meme_postkarte-r5217bc183c3f455cbb761c86cdcae236_vgbaq_8byvr_512.jpg?bg=0xffffff" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;" target="_blank" rel="external"><span style="font-family: inherit;"><img border="0" height="200" src="http://rlv.zcache.co.uk/whatever_guy_meme_postkarte-r5217bc183c3f455cbb761c86cdcae236_vgbaq_8byvr_512.jpg?bg=0xffffff" width="200"></span></a><br><span style="font-family: inherit;"><br></span><br><span style="font-family: inherit;">Typical sentiments - Who cares about JavaScript ? Do people actually code it in ? OMG! what the hell world has come to.&nbsp;<b>Real</b>&nbsp;programmers code in Java, So I’m just gonna learn java.</span><br><span style="font-family: inherit;"><b><br></b><b><br></b><b><br></b><b>2. Hatred:</b></span><br><div class="" style="clear: both; text-align: left;"><a href="http://ragecollection.com/img/ragefaces/y-u-no.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: left;" target="_blank" rel="external"></a><span style="font-family: inherit;"><br></span><br><div class="separator" style="clear: both; text-align: center;"><a href="http://i3.kym-cdn.com/entries/icons/original/000/004/006/y-u-no-guy.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" target="_blank" rel="external"><span style="font-family: inherit;"><img border="0" height="200" src="http://i3.kym-cdn.com/entries/icons/original/000/004/006/y-u-no-guy.jpg" width="196"></span></a></div><span style="font-family: inherit;"><br><br>Then comes a project requirement asking developers to learn JavaScript.&nbsp;</span><br><span style="font-family: inherit;"><br>Typical sentiments - Why are you making me do this ?</span><br><span style="font-family: inherit;"><br></span></div><div class="separator" style="clear: both; text-align: left;"><a href="http://i1.kym-cdn.com/photos/images/original/000/232/114/e39.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;" target="_blank" rel="external"><span style="font-family: inherit;"><img border="0" height="200" src="http://i1.kym-cdn.com/photos/images/original/000/232/114/e39.png" width="192"></span></a><span style="font-family: inherit;"><br><br>After coding for a while in JavaScript developers usually fall prey to JavaScript gotchas. And hatred grows even more! <br><br>Typical sentiments - No, I’m never going touch JavaScript again, the hell with this project and this company!</span></div><div class="separator" style="clear: both; text-align: left;"><b><span style="font-family: inherit;">3. Acceptance:</span></b></div><div class="separator" style="clear: both; text-align: left;"><span style="font-family: inherit;">Finally folks understand that JS isn’t going anywhere. Then comes zen moment in JavaScript. If you’re in this phase, just step back from computer and think about meaning of life. Why JS exists.</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://www.all-hd-wallpapers.com/wallpapers/nature/379332.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" target="_blank" rel="external"><span style="font-family: inherit;"><img border="0" height="250" src="http://www.all-hd-wallpapers.com/wallpapers/nature/379332.jpg" width="400"></span></a></div><div class="separator" style="clear: both; text-align: center;"><span style="font-family: inherit;"><br></span></div><div class="separator" style="clear: both; text-align: left;"><b><span style="font-family: inherit;">4. Realization:</span></b></div><div class="separator" style="clear: both; text-align: left;"><span style="font-family: inherit;">After you’ve hit the zen moment, then comes realization of beauty and simplicity of JavaScript, you get introduced to awesome frameworks like <a href="http://www.angularjs.org/" target="_blank"><span style="color: #0b5394;">Angularjs</span></a>, <a href="http://backbonejs.org/" target="_blank"><span style="color: #0b5394;">Backbone</span></a>, <a href="http://www.jaydata.org/" target="_blank"><span style="color: #0b5394;">jaydata</span></a>. tools like <a href="http://gruntjs.com/" target="_blank"><span style="color: #0b5394;">grunt</span></a>, <a href="https://github.com/bower/bower" target="_blank"><span style="color: #0b5394;">bower </span></a>and JavaScript becomes your beloved language!</span></div><div class="separator" style="clear: both; text-align: center;"><a href="http://i1165.photobucket.com/albums/q593/seiferalmercy/yes-you-can-meme.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" target="_blank" rel="external"><span style="font-family: inherit;"><img border="0" height="200" src="http://i1165.photobucket.com/albums/q593/seiferalmercy/yes-you-can-meme.jpg" width="320"></span></a></div><div class="separator" style="clear: both; text-align: left;"><span style="font-family: inherit;"><br></span></div><div class="separator" style="clear: both; text-align: left;"><span style="font-family: inherit;">And remember, this is just the&nbsp;beginning!&nbsp;</span></div></div></div>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      <a href="/2013/10/01/life-cycle-of-javascript-adaption/" class="article-date">
+  <time datetime="2013-10-01T12:43:00.000Z" itemprop="datePublished">Oct 1 2013</time>
+</a>
+    </span>
+    <span class="meta-elements author">Chinmay Kulkarni</span>
+    <div class="commentscount">
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>»<a class="article-category-link" href="/categories/javascript/learning-javascript/">learning javascript</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2013/page/2/">2</a><a class="extend next" rel="next" href="/archives/2013/page/2/">Next &raquo;</a>
+    </nav>
+  
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:chinmaymk.github.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Chinmay Kulkarni</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2015 Chinmay Kulkarni<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'chinmaymk';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="https://cdn.rawgit.com/chinmaymk/jquery-reading-time/master/jquery.readingTime.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.post').readingTime();
+  });
+</script>
+  </div>
+</body>
+</html>
