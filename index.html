@@ -50,6 +50,70 @@
     <div id="main">
       
   
+    <article id="post-affordances-in-mobile-apps" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2015/05/16/affordances-in-mobile-apps/">Affordances in Mobile Apps</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Humans are creatures of habit. Human brain learns certain pattern over time and after a while they become reflexes. User experience of mobile apps is limited by tiny screen size, touch controls, and sensors. Thus, establishing a deterministic familiar pattern is crucial for user experience.</p>
+<p>I regularly use my iPhone and nexus tablet for reading, social networking, emails, and checking updates on the go. This mix of android and iOS gives me diverse yet somewhat unified experience for the apps I use. Even though most of my actions are mechanical by now, there are still some nuances I would like to address.</p>
+<h1 id="Platform_defined_gestures">Platform defined gestures</h1>
+<p>iOS provides left-swipe and right-swipe  gestures for list views. All native apps as well many popular apps have implemented those. However, dropbox does not use them for their iOS mobile app. Swipe to right on file list does not provide any options for moving/deleting the file. This is a pattern based affordance which plays an important role in defining user experience  Remedy would be to use gestures defined by operating system to make user experience consistent.</p>
+<h1 id="Meaningful_icons">Meaningful icons</h1>
+<p>On iOS, buttons style was changed to their textual representation for better clarity. I personally favor this arrangement over icons that make little sense. Over time, some icons have been strongly associated with actions e.g. refresh, stop, back, forward, mail, and user. Adding new icons in mobile apps is harders because mobile apps can not show metadata associated with icon in form of hover box. Thus it is often left to user to unravel the mystery of it. I think this approach is cumbersome and degrades user experience substantially. One example of this is flickr iOS app. Sync icon (indicating all photos have been uploaded) and news feed icon do not convey any meaning over pointers to actions performed by them. Using standard icons or textual buttons would have been better.</p>
+<h1 id="Deterministic_behavior">Deterministic behavior</h1>
+<p>When app performs an action in response to user input, it must be repeatable. In practice however, it is often false. Mobile apps in current days have great dependency on active data connection. Thus they fail to scale down gracefully in case a data connection is absent. For example, mobile apps crash when train enters the tunnel. The same actions performed by user in presence of data connection cause incorrect behavior when data connection is absent. This is not a user experience. Applications should indicate which actions are disabled temporarily while they wait for internet connectivity. On the good side, many applications such as gmail and flickr have started including this functionality. Going forward, it would be great to see graceful degrades in more mobile apps.</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      
+      <a href="/2015/05/16/affordances-in-mobile-apps/" class="article-date">
+  <time datetime="2015-05-16T10:52:08.000Z" itemprop="datePublished">May 16 2015</time>
+</a>
+    </span>
+    <span class="meta-elements author">
+        Chinmay Kulkarni  
+        
+    </span>
+    
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2015/05/16/affordances-in-mobile-apps/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+
+  
     <article id="post-Web-app-concepts" class="post">
 	
 	
@@ -295,96 +359,6 @@
 			<span class="tags">
 				
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DataScience/">DataScience</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-			</span>
-		</div>
-	</footer>
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-
-
-  
-    <article id="post-Getting-started-with-machine-learning" class="post">
-	
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2014/10/19/Getting-started-with-machine-learning/">Getting Started With Machine Learning</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-    	<p>Machine learning is without a doubt the most interesting field I have come across so far. However, I found it extremely difficult to get started with the basic concepts of machine learning without spending hours and hours scrolling through world wide web. Coming from a web development background, I found it hard to get started with statistics, probability and other concepts related with machine learning. In this post, I will try and list resources that helped me and might help someone else in similar situation. </p>
-<h1 id="Courses">Courses</h1>
-<ul>
-<li><p><strong>Andrew Ng’s coursera course</strong> - <a href="https://www.coursera.org/course/ml" target="_blank" rel="external">coursera</a><br>If you haven’t heard of this course yet, just go ahead and take it.<br>This course provides a broad introduction to machine learning, datamining, and statistical pattern recognition.</p>
-</li>
-<li><p><strong>Andrew Ng’s stanford course CS 229</strong> - <a href="https://www.youtube.com/watch?v=UzxYlbK2c7E&amp;list=PLA89DCFA6ADACE599" target="_blank" rel="external">youtube</a><br>This is a much detailed version than the coursera course.<br>This course provides a broad introduction to machine learning and statistical pattern recognition. Topics include supervised learning, unsupervised learning, learning theory, reinforcement learning and adaptive control. Recent applications of machine learning, such as to robotic control, data mining, autonomous navigation, bioinformatics, speech recognition, and text and web data processing are also discussed.</p>
-</li>
-<li><p><strong>Machine learning course CS 156 by Yaser Abu-Mostafa</strong> - <a href="https://www.youtube.com/watch?v=mbyG85GZ0PI&amp;list=PLD63A284B7615313A" target="_blank" rel="external">youtube</a><br>This course helps clear many basic concepts. Also, I liked the presentation by Yaser Abu-Mostafa!<br>This is an introductory course by Caltech Professor Yaser Abu-Mostafa on machine learning that covers the basic theory, algorithms, and applications. </p>
-</li>
-<li><p><strong>Probabilistic graphical models</strong> - <a href="https://www.coursera.org/course/pgm" target="_blank" rel="external">coursera</a><br>A bit advanced course, but worth taking.<br>In this class, you will learn the basics of the PGM representation and how to construct them, using both human knowledge and machine learning techniques.</p>
-</li>
-<li><p><strong>In-depth introduction to machine learning</strong> - <a href="http://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/" target="_blank" rel="external">r-bloggers</a><br>Awesome introduction, This lecture series is provided stanford professors Dr. Hastie and Dr. Tibshirani.</p>
-</li>
-<li><p><strong>Mathematical Biostatistics Boot Camp 1</strong> - <a href="https://www.coursera.org/course/biostats" target="_blank" rel="external">coursera</a><br>This class helps refresh basics of mathematics.<br>Topics include probability, random variables, distributions, expectations, variances, independence, conditional probabilities, likelihood and some basic inferences based on confidence intervals.</p>
-</li>
-</ul>
-<h1 id="Web_resources">Web resources</h1>
-<ul>
-<li><p><a href="http://machinelearningmastery.com/start-here/" target="_blank" rel="external">Machine learning mastery</a><br>A compilation of steps to get started, extremely helpful for beginners</p>
-</li>
-<li><p><a href="https://www.kaggle.com/" target="_blank" rel="external">kaggle</a>, The Home of Data Science<br>Only name is sufficient - The Home of Data Science</p>
-</li>
-<li><p><a href="http://www.datatau.com/" target="_blank" rel="external">DataTau</a><br>Hackernews for data scientists</p>
-</li>
-<li><p><a href="http://archive.ics.uci.edu/ml/datasets.html" target="_blank" rel="external">UCI machine learning repository</a><br>Machine learning needs data, UCI give you data.</p>
-</li>
-</ul>
-<h1 id="Language">Language</h1>
-<p>Even though language is more of a personal choice, machine learning algorithms are hard to implement in every language out there. Thus, some languages are favoured by ML community. Primary languages used as per <a href="http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/" target="_blank" rel="external">kaggle</a>, and <a href="http://machinelearningmastery.com/best-programming-language-for-machine-learning/" target="_blank" rel="external">ML mastery</a> are R, matlab and python. I personally prefer python, because it nicely fits in web stack. But R and matlab are surely great tools as well.</p>
-<p>For python lovers, <a href="http://www.scipy.org/" target="_blank" rel="external">SciPy</a> is a place to go. In case you’re new to python, I recommend learning the language first. </p>
-<p>For learning R, there are loads of videos on YouTube. As a beginner in R, it is hard to find one that works for you. I found <a href="https://www.youtube.com/playlist?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU" target="_blank" rel="external">R Programming Tutorials</a> by MarinStatsLectures quite helpful.</p>
-<p>Thank you for reading and I hope this has been an informative post.</p>
-
-    
-	</div>
-  <footer class="entry-meta-header">
-    <span class="meta-elements date">
-      
-      <a href="/2014/10/19/Getting-started-with-machine-learning/" class="article-date">
-  <time datetime="2014-10-20T00:44:03.000Z" itemprop="datePublished">Oct 19 2014</time>
-</a>
-    </span>
-    <span class="meta-elements author">
-        Chinmay Kulkarni  
-        
-    </span>
-    
-    <div class="commentscount">
-      
-        <a href="http://chinmaymk.github.io/2014/10/19/Getting-started-with-machine-learning/#disqus_thread" class="article-comment-link">Comments</a>
-      
-    </div>
-  </footer>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Statistics/">Statistics</a></li></ul>
 
 			</span>
 		</div>

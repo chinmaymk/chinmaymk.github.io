@@ -50,6 +50,70 @@
     <div id="main">
       
   
+    <article id="post-affordances-in-mobile-apps" class="post">
+	
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2015/05/16/affordances-in-mobile-apps/">Affordances in Mobile Apps</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>Humans are creatures of habit. Human brain learns certain pattern over time and after a while they become reflexes. User experience of mobile apps is limited by tiny screen size, touch controls, and sensors. Thus, establishing a deterministic familiar pattern is crucial for user experience.</p>
+<p>I regularly use my iPhone and nexus tablet for reading, social networking, emails, and checking updates on the go. This mix of android and iOS gives me diverse yet somewhat unified experience for the apps I use. Even though most of my actions are mechanical by now, there are still some nuances I would like to address.</p>
+<h1 id="Platform_defined_gestures">Platform defined gestures</h1>
+<p>iOS provides left-swipe and right-swipe  gestures for list views. All native apps as well many popular apps have implemented those. However, dropbox does not use them for their iOS mobile app. Swipe to right on file list does not provide any options for moving/deleting the file. This is a pattern based affordance which plays an important role in defining user experience  Remedy would be to use gestures defined by operating system to make user experience consistent.</p>
+<h1 id="Meaningful_icons">Meaningful icons</h1>
+<p>On iOS, buttons style was changed to their textual representation for better clarity. I personally favor this arrangement over icons that make little sense. Over time, some icons have been strongly associated with actions e.g. refresh, stop, back, forward, mail, and user. Adding new icons in mobile apps is harders because mobile apps can not show metadata associated with icon in form of hover box. Thus it is often left to user to unravel the mystery of it. I think this approach is cumbersome and degrades user experience substantially. One example of this is flickr iOS app. Sync icon (indicating all photos have been uploaded) and news feed icon do not convey any meaning over pointers to actions performed by them. Using standard icons or textual buttons would have been better.</p>
+<h1 id="Deterministic_behavior">Deterministic behavior</h1>
+<p>When app performs an action in response to user input, it must be repeatable. In practice however, it is often false. Mobile apps in current days have great dependency on active data connection. Thus they fail to scale down gracefully in case a data connection is absent. For example, mobile apps crash when train enters the tunnel. The same actions performed by user in presence of data connection cause incorrect behavior when data connection is absent. This is not a user experience. Applications should indicate which actions are disabled temporarily while they wait for internet connectivity. On the good side, many applications such as gmail and flickr have started including this functionality. Going forward, it would be great to see graceful degrades in more mobile apps.</p>
+
+    
+	</div>
+  <footer class="entry-meta-header">
+    <span class="meta-elements date">
+      
+      <a href="/2015/05/16/affordances-in-mobile-apps/" class="article-date">
+  <time datetime="2015-05-16T10:52:08.000Z" itemprop="datePublished">May 16 2015</time>
+</a>
+    </span>
+    <span class="meta-elements author">
+        Chinmay Kulkarni  
+        
+    </span>
+    
+    <div class="commentscount">
+      
+        <a href="http://chinmaymk.github.io/2015/05/16/affordances-in-mobile-apps/#disqus_thread" class="article-comment-link">Comments</a>
+      
+    </div>
+  </footer>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+
+  
     <article id="post-Web-app-concepts" class="post">
 	
 	
