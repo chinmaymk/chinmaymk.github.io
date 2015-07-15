@@ -991,7 +991,7 @@ pre .deletion {
 }
 @media (min-width: 768px) and (max-width: 1040px) {
   #container {
-    width: 700px;
+    width: 640px;
   }
   #main {
     padding-left: 0;
