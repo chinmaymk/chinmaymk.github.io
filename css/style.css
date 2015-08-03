@@ -594,6 +594,7 @@ pre .deletion {
 }
 .entry-content p {
   margin: 0 0 1em 0;
+  text-align: justify;
 }
 .entry-content img,
 .entry-content video {
