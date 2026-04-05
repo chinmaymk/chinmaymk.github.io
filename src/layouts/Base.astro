@@ -18,6 +18,13 @@ const { title, description = 'Chinmay — I work on AI things.' } = Astro.props;
   <meta name="description" content={description} />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="canonical" href={Astro.url.href} />
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-9V5XXE2X54"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9V5XXE2X54');
+  </script>
 </head>
 <body>
   <div class="container">
