@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Group by year
+const postsByYear = new Map<number, typeof posts>();
+for (const post of posts) {
+  const year = post.data.date.getFullYear();
+  if (!postsByYear.has(year)) postsByYear.set(year, []);
+  postsByYear.get(year)!.push(post);
+}
+
+const years = [...postsByYear.keys()].sort((a, b) => b - a);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+---
+
+<Base title="Writing — Chinmay">
+  <h1 style="font-size: 1.4rem; margin-bottom: 2rem;">Writing</h1>
+
+  {years.map((year) => (
+    <div class="year-group">
+      <div class="year-label">{year}</div>
+      <ul class="post-list">
+        {postsByYear.get(year)!.map((post) => (
+          <li>
+            <span class="post-date">{formatDate(post.data.date)}</span>
+            <div class="post-title">
+              <a href={`/blog/${post.id}`}>{post.data.title}</a>
+            </div>
+            {post.data.description && (
+              <div class="post-description">{post.data.description}</div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</Base>

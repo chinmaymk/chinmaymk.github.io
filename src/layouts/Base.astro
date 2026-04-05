@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Chinmay — I work on AI things.' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="canonical" href={Astro.url.href} />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1><a href="/">Chinmay</a></h1>
+      <nav class="site-nav">
+        <a href="/blog">Writing</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      &copy; {new Date().getFullYear()} Chinmay
+    </footer>
+  </div>
+</body>
+</html>
